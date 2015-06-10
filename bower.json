@@ -1,0 +1,24 @@
+{
+    "name": "shellino-vacations",
+    "version": "0.1.0",
+    "homepage": "http://shellinovacations.com",
+    "authors": [
+        "Harshal Patil (harshal.rp@gmail.com)"
+    ],
+    "description": "Public website of shellino vacations",
+    "moduleType": [
+        "globals"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "foundation": "~5.5.2"
+    }
+}
