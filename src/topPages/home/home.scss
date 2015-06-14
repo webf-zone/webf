@@ -1,2 +1,117 @@
 @import "../../scss/_variables.scss";
 @import "../../scss/_foundation_media_queries.scss";
+
+.page-body {
+    background-color: $color-white;
+    margin: 30px auto;
+    width: 90vw;
+
+    padding: 15px;
+    max-width: 640px;
+}
+
+.event-intro {
+
+    .event-intro-heading {
+        font-size: 1.125rem;
+    }
+
+    .text-no-break {
+        color: $color-niagara;
+    }
+
+    .event-intro-text {
+        font-size: 1.125rem;
+    }
+}
+
+.event-calendar {
+
+    $event-header-font: 1.125rem;
+
+    .event-header {
+        font-size: $event-header-font;
+    }
+
+    .event-header-text {
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .event-icon {
+        width: $event-header-font;
+    }
+
+    .event-details {
+        margin-bottom: 10px;
+    }
+
+    .button.register-now {
+        margin: 0;
+        display: block;
+        padding: 15px;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .event-timetable {
+
+        $vertical-line-padding: 30;
+        $vertical-line-width: 4;
+
+        position: relative;
+
+        .vertical-line {
+            position: absolute;
+            width: $vertical-line-width + px;
+            height: 100%;
+            left: $vertical-line-padding + px;
+            top: 0;
+            background-color: $color-niagara;
+            box-shadow: 0 0 $vertical-line-width + px $color-pelorous;
+        }
+
+        .timetable-item {
+            padding-bottom: $vertical-line-padding + px;
+            padding-left: $vertical-line-padding * 2.2 + px;
+
+            &.timetable-day {
+                font-size: 1.3125rem;
+
+                padding-top: 6px;
+                padding-bottom: 6px;
+                margin-bottom: $vertical-line-padding / 2 + px;
+
+                background-color: #E0E0E0;
+            }
+
+            .timetable-icon {
+                background-color: $color-niagara;
+                background-image: url(/img/icons/conference.png);
+                background-repeat: no-repeat no-repeat;
+                background-size: contain;
+                background-origin: content-box;
+                background-position: center center;
+                border: $vertical-line-width + px solid $color-concrete;
+                border-radius: 100%;
+                box-shadow: 0 0 $vertical-line-width + px 1px rgba(0,0,0,0.5);
+                content: "";
+                display: block;
+                height: $vertical-line-padding * 1.4 + px;
+                position: absolute;
+                padding: $vertical-line-width + px;
+                left: ($vertical-line-padding + $vertical-line-width / 2) - ($vertical-line-padding * 1.4 / 2) + px;
+                width: $vertical-line-padding * 1.4 + px;
+            }
+
+            .timetable-heading,
+            .timetable-description {
+                margin: 0;
+            }
+
+            .timetable-heading {
+                font-weight: bold;
+            }
+        }
+    }
+}

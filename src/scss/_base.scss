@@ -24,3 +24,23 @@ body, html {
     margin-right: auto;
     max-width: initial;
 }
+
+.inline-block {
+    display: inline-block;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-light {
+    font-weight: 300;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-no-break {
+    white-space: nowrap;
+}

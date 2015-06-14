@@ -212,6 +212,7 @@ $font-family-sans-serif: "Lato", sans-serif;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
 // $header-text-rendering: optimizeLegibility;
+$header-font-color: $color-kelp;
 
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
@@ -499,6 +500,8 @@ $crumb-slash-color: $white;
 // $warning-button-border-color: $warning-button-bg-hover;
 // $info-button-bg-hover: scale-color($info-color, $lightness: $button-function-factor);
 // $info-button-border-color: $info-button-bg-hover;
+$button-bg-color: $color-niagara;
+
 
 // We use this to set the default radius used throughout the core.
 // $button-radius: $global-radius;
