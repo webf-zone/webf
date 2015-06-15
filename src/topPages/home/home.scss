@@ -4,10 +4,19 @@
 .page-body {
     background-color: $color-white;
     margin: 30px auto;
-    width: 90vw;
+    width: 90%;
 
     padding: 15px;
-    max-width: 640px;
+}
+
+@media #{$medium-up} {
+
+    .two-column-grid {
+        float: left;
+        width: 44%;
+        margin: 0 3%;
+    }
+
 }
 
 .event-intro {
@@ -113,5 +122,86 @@
                 font-weight: bold;
             }
         }
+    }
+}
+
+.wall-container {
+
+    box-shadow: 0 0 4px 1px rgba(0, 0,0, 0.2);
+
+    .wall-info-panel {
+        position: relative;
+    }
+
+    .wall-content {
+        background-image: url(/img/wall/wall-2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: $color-concrete;
+        padding: 15px;
+        font-size: 1.125rem;
+    }
+
+    .button.register-now {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin: 0;
+        padding: 10px;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+.ideal-candidate-panel {
+    color: #8C0000;
+    margin: 1rem 0;
+    box-shadow: 0 0 4px 1px rgba(0, 0,0, 0.4);
+    padding: 0.5rem 1rem;
+    border: 1px solid;
+
+    .ideal-candidate-text {
+        font-size: 1.125rem;
+    }
+
+    .pirate-cap {
+        width: 30%;
+        float: left;
+        margin-right: 5%;
+    }
+
+    h2 {
+        color: #8C0000;
+    }
+}
+
+.event-people {
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    .people-list {
+        list-style: none;
+        margin: 0;
+    }
+
+    .people-list-item {
+        box-shadow: 0 0 4px 1px rgba(0, 0,0, 0.2);
+        margin-bottom: 1rem;
+    }
+
+    .people-image {
+        max-width: 120px;
+    }
+
+    .people-name, .people-short-bio, .inline-list {
+        padding: 0 5px;
+        margin: 0;
+    }
+
+    .inline-list {
+        margin-left: -1.375rem;
     }
 }

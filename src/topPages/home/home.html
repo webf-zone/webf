@@ -8,9 +8,9 @@ js:
     - /home/home.js
 ---
 
-<section class="page-body">
+<section class="page-body clearfix">
 
-    <div class="two-column-grid">
+    <div id="grid-column-0" class="two-column-grid">
 
         <div class="tcg-item event-intro">
             <h3 class="event-intro-heading text-bold">
@@ -23,7 +23,7 @@ js:
                 code organization, async programming, functional JavaScript and much more.
             </p>
 
-            <p class="event-intro-text text-light text-italic">
+            <p class="hide event-intro-text text-light text-italic">
                 Side note: Learning Angular.js and Building an app with Angular.js are two different things.
                 If you wish to understand this difference, then you a perfect candidate to attend the workshop.
             </p>
@@ -34,17 +34,17 @@ js:
             <div class="event-header">
                 <div class="event-details">
                     <div class="inline-block">
-                        <img class="event-icon" src="../../img/icons/calendar.png" />
+                        <img class="event-icon" src="/img/icons/calendar.png" />
                         <span class="event-header-text">August 8-9, 2015</span>
                     </div>
                     <div class="inline-block">
-                        <img class="event-icon" src="../../img/icons/map-marker.png" />
+                        <img class="event-icon" src="/img/icons/map-marker.png" />
                         <a class="event-header-text" target="_blank" href="https://goo.gl/maps/GCh4H">
                             Yashada, Baner Road, Pune
                         </a>
                     </div>
                 </div>
-                <a class="button register-now" href="#">Register now</a>
+                <a class="button register-now text-bold" href="#">Register now</a>
             </div>
 
             <div class="event-timetable">
@@ -100,21 +100,116 @@ js:
 
         </div>
 
-        <div class="tcg-item">
+        <div class="tcg-item wall-container">
             <img alt="Angular Build" src="/img/wall/wall-1.png" />
-            <div class="">
-                <img alt="Angular Build" src="/img/wall/wall-2.png" />
+
+            <div class="wall-info-panel">
+                <div class="wall-content text-right">
+                    <div>Pune</div>
+                    <div>Oxford of East</div>
+                    <div>Maharashtra, India</div>
+                    <a class="button register-now" href="#">Register now</a>
+                </div>
             </div>
         </div>
 
-        <div class="tcg-item">
-            Presenter and contributor Monkeys section.
+        <div class="tcg-item clearfix ideal-candidate-panel">
+            <h2>Pirates be Warned!!! <span>Should you attend?</span></h2>
+            <img class="pirate-cap" src="/img/general/pirate-hat-2.png" />
+            <div class="ideal-candidate-text">
+                If you are a <span class="text-bold">pirate</span> and
+                wish to understand a difference between
+                <span class="text-bold">learning Angular.js and building an app with Angular.js</span>,
+                then you a perfect candidate to attend the workshop.
+            </div>
+        </div>
+
+        <div class="tcg-item event-people">
+            <h2>Idiots at work</h2>
+            <p>
+                There are speakers, contributors, designers, managers that make this workshop possible.
+                Without them, it is just impossible.
+            </p>
+            <ul class="people-list">
+                <li class="people-list-item clearfix">
+                    <img class="people-image" src="/img/speakers/kumarbhot.png" alt="Kumar Bhost" />
+                    <h3 class="people-name">Santoshkumar Bhot</h3>
+                    <div class="people-short-bio" style="clear: both">
+                        Architect at EMC<sup>2</sup>
+                    </div>
+                    <ul class="inline-list">
+                        <li><a target="_blank" href="">@twitter</a></li>
+                        <li><a target="_blank" href="">@personal website</a></li>
+                    </ul>
+                </li>
+
+                <li class="people-list-item clearfix">
+                    <img class="people-image" src="/img/speakers/kumarbhot.png" alt="Kumar Bhost" />
+                    <h3 class="people-name">Santoshkumar Bhot</h3>
+                    <div class="people-short-bio" style="clear: both">
+                        Architect at EMC<sup>2</sup>
+                    </div>
+                    <ul class="inline-list">
+                        <li><a target="_blank" href="">@twitter</a></li>
+                        <li><a target="_blank" href="">@personal website</a></li>
+                    </ul>
+                </li>
+
+                <li class="people-list-item clearfix">
+                    <img class="people-image" src="/img/speakers/kumarbhot.png" alt="Kumar Bhost" />
+                    <h3 class="people-name">Santoshkumar Bhot</h3>
+                    <div class="people-short-bio" style="clear: both">
+                        Architect at EMC<sup>2</sup>
+                    </div>
+                    <ul class="inline-list">
+                        <li><a target="_blank" href="">@twitter</a></li>
+                        <li><a target="_blank" href="">@personal website</a></li>
+                    </ul>
+                </li>
+
+            </ul>
         </div>
 
         <div class="tcg-item">
-            Some other text about Web-F?
+            For more details drop us a mail at <a href="mailto:event@webf.zone">event@webf.zone</a> or call us at +91-8888882415.
         </div>
 
     </div>
+
+    <div id="grid-column-1" class="two-column-grid"></div>
+
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+
+            var elementsToMove = document.querySelectorAll(".event-calendar, .event-people");
+            var gridColumn0 = document.getElementById("grid-column-0");
+            var gridColumn1 = document.getElementById("grid-column-1");
+
+            var mq = window.matchMedia("(min-width: 40.063em)");
+
+            var mq = window.matchMedia("(min-width: 500px)");
+
+            mq.addListener(adjustGridLayout);
+
+            function adjustGridLayout() {
+                if (mq.matches) {
+                    // window width is at least 640px;
+                    Array.prototype.forEach.call(elementsToMove, function (element) {
+                        gridColumn1.appendChild(element);
+                    });
+                }
+                else {
+                    // window width is less than 640px
+                    Array.prototype.forEach.call(elementsToMove, function (element) {
+                        gridColumn0.appendChild(element);
+                    });
+                }
+            }
+
+            adjustGridLayout();
+
+        })();
+    </script>
 
 </section>
