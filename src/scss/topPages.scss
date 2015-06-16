@@ -4,7 +4,8 @@
 .page-header {
     margin: 0 auto;
     padding-top: 30px;
-    width: 90vw;
+    width: 90%;
+    max-width: 1600px;
 }
 
 .logo-container {
@@ -51,4 +52,19 @@
         width: 50%;
     }
 
+}
+
+.page-body {
+    background-color: $color-white;
+    margin: 30px auto;
+    width: 90%;
+    padding: 15px;
+    max-width: 640px;
+}
+
+@media #{$large-up} {
+
+    .page-body {
+        max-width: 1600px;
+    }
 }

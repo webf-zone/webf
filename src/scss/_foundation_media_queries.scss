@@ -1,7 +1,8 @@
 ﻿@import "../../bower_components/foundation/scss/foundation/_functions.scss";
 
 // Media Query Ranges
-$small-range: (0, 40em) !default;
+$extra-small-range: (0, 30em) !default;
+$small-range: (30em, 40em) !default;
 $medium-range: (40.063em, 64em) !default;
 $large-range: (64.063em, 90em) !default;
 $xlarge-range: (90.063em, 120em) !default;
@@ -13,7 +14,10 @@ $screen: "only screen" !default;
 $landscape: "#{$screen} and (orientation: landscape)" !default;
 $portrait: "#{$screen} and (orientation: portrait)" !default;
 
-$small-up: $screen !default;
+$extra-small-up: $screen !default;
+$extra-small-only: "#{$screen} and (max-width: #{upper-bound($extra-small-range)})" !default;
+
+$small-up: "#{$screen} and (min-width:#{lower-bound($small-range)})" !default;
 $small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
 
 $medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})" !default;
