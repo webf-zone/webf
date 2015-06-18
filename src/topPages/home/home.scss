@@ -3,9 +3,9 @@
 
 .page-body {
     background-color: $color-white;
-    margin: 30px auto;
+    margin: 2rem auto 1rem auto;
     width: 90%;
-    padding: 15px;
+    padding: 1rem;
     max-width: 640px;
 }
 
@@ -157,7 +157,7 @@
     }
 
     .wall-content {
-        background-image: url(/img/wall/wall-2.png);
+        background-image: url(/img/wall/wall-2-opt.png);
         background-repeat: no-repeat;
         background-size: cover;
         color: $color-concrete;
@@ -228,6 +228,10 @@
     .people-list {
         list-style: none;
         margin: 0;
+
+        a {
+            text-decoration: underline;
+        }
     }
 
     .people-list-item {

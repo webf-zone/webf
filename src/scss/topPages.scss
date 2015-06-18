@@ -1,11 +1,15 @@
 @import "_variables.scss";
 @import "_foundation_media_queries.scss";
 
-.page-header {
+@mixin website-outline {
     margin: 0 auto;
-    padding-top: 30px;
     width: 90%;
     max-width: 1600px;
+}
+
+.page-header {
+    @include website-outline;
+    padding-top: 2rem;
 }
 
 .logo-container {
@@ -56,7 +60,7 @@
 
 .page-body {
     background-color: $color-white;
-    margin: 30px auto;
+    margin: 2rem auto 1rem auto;
     width: 90%;
     padding: 15px;
     max-width: 640px;
@@ -67,4 +71,11 @@
     .page-body {
         max-width: 1600px;
     }
+}
+
+.page-footer {
+    @include website-outline;
+    padding: 1rem;
+
+    background-color: #F8F8F8;
 }
