@@ -76,6 +76,11 @@
 .page-footer {
     @include website-outline;
     padding: 1rem;
-
+    color: $color-gray;
     background-color: #F8F8F8;
+
+    .page-footer-content {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
 }

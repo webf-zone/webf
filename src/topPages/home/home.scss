@@ -29,7 +29,6 @@
     }
 
     .text-no-break {
-        color: $color-niagara;
     }
 
     .event-intro-text {
@@ -64,6 +63,7 @@
         padding: 15px;
         font-size: 1.5rem;
         letter-spacing: 1px;
+        text-decoration: underline;
     }
 
     .event-timetable {
@@ -173,6 +173,7 @@
         position: absolute;
         left: 0;
         top: 0;
+        text-decoration: underline;
     }
 
     @media #{$small-up} {
@@ -206,15 +207,15 @@
         color: #8C0000;
     }
 
+    ol {
+        margin-bottom: 0;
+    }
+
     @media #{$large-up} {
 
         .pirate-cap {
             width: 30%;
-            margin-right: 0;
-        }
-
-        .ideal-candidate-text {
-            margin-left: 35%;
+            margin-right: 5%;
         }
     }
 }

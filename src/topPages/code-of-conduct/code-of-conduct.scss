@@ -1,0 +1,21 @@
+﻿@import "../../scss/_variables.scss";
+
+.page-body {
+    max-width: none;
+}
+
+.code-conduct-panel {
+    letter-spacing: 1px;
+
+    h4 {
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
+    .simple-person-image {
+        max-width: 200px
+    }
+}
