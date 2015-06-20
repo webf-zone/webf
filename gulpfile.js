@@ -359,6 +359,10 @@ function getNormalizedUrl(rawUrl) {
 
     var normalizedUrl = "";
 
+    // This is an absolute URL
+    if (rawUrl.indexOf("http") === 0) {
+        return rawUrl;
+    }
     //rawUrl = path.normalize(rawUrl).replace(new RegExp(escapeRegExp("\\"), 'g'), "/");
     rawUrl = path.normalize(rawUrl).replace(new RegExp("\\\\", 'g'), "/");
 
