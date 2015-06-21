@@ -20,3 +20,25 @@
     }
 
 }
+
+
+.core-contributor-panel {
+
+    letter-spacing: 1px;
+    word-spacing: 5px;
+
+    .core-contributor {
+        float: left;
+        position: relative;
+    }
+
+    .core-contributor-name {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: $color-white;
+        text-transform: uppercase;
+        padding: 0.25rem;
+    }
+}
