@@ -384,7 +384,7 @@ function getNormalizedUrl(rawUrl) {
             normalizedUrl = rawUrl.replace("/topPages", "");
         } else if (/^\//g.test(rawUrl)) {
             normalizedUrl = rawUrl;
-        } else if (/^([a-z|A-Z])+/g.test(rawUrl)) {
+        } else if (/^([a-z|A-Z|0-9])+/g.test(rawUrl)) {
             normalizedUrl = rawUrl;
         } else {
             normalizedUrl = "#invalid";
