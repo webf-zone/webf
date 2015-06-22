@@ -1,5 +1,5 @@
-@import "_variables.scss";
-@import "_foundation_media_queries.scss";
+@import "../scss/_variables.scss";
+@import "../scss/_foundation_media_queries.scss";
 
 @mixin website-outline {
     margin: 0 auto;
