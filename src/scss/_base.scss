@@ -2,13 +2,18 @@
 @import "_foundation_media_queries.scss";
 
 
-body, html {
+html {
+    height: 100%;
+    font-size: 18px;
+}
+
+body {
     height: 100%;
     font-family: $font-family-sans-serif;
     line-height: 1.5;
     color: $color-kelp;
+    font-size: 100%;
     background-color: $color-concrete;
-    font-size: 18px;
     letter-spacing: 1px;
     word-spacing: 4px;
 }

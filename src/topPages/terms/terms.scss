@@ -1,21 +1,11 @@
 ﻿@import "../../scss/_variables.scss";
 
-.page-body {
-    max-width: none;
-}
-
 .terms-conditions-panel {
-    letter-spacing: 1px;
-    word-spacing: 5px;
 
     .terms-conditions-content {
-        font-size: 1.125rem;
         columns: 2 320px;
         column-gap: 4rem;
         column-rule: 1px solid $color-concrete;
     }
 
-    p {
-        font-size: 1.125rem;
-    }
 }

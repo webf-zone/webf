@@ -2,10 +2,6 @@
 @import "../../scss/_foundation_media_queries.scss";
 
 .page-body {
-    background-color: $color-white;
-    margin: 2rem auto 1rem auto;
-    width: 90%;
-    padding: 1rem;
     max-width: 640px;
 }
 
@@ -193,10 +189,6 @@
     padding: 0.5rem 1rem;
     border: 1px solid;
 
-    .ideal-candidate-text {
-        font-size: 1.125rem;
-    }
-
     .pirate-cap {
         width: 35%;
         float: left;
@@ -266,5 +258,5 @@
 }
 
 .contact-us-panel {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }

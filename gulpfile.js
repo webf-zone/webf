@@ -174,7 +174,7 @@ function jsPipeline(files) {
 
     var stream = gulp.src(files, { base: paths.src, cwd: paths.src });
 
-    if (buildMode == "release") {
+    if (buildMode === "release") {
         stream.pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(sourcemaps.write(".", { addComment: false }))

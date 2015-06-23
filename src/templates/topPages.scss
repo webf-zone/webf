@@ -29,7 +29,7 @@
 
 .page-master-menu-item {
     display: inline-block;
-    margin: 0 30px 0 0;
+    margin: 0 1rem 0 0;
 }
 
 .page-master-menu-link {
@@ -58,13 +58,18 @@
         width: 50%;
     }
 
+    .page-master-menu-item {
+        display: inline-block;
+        margin: 0 2rem 0 0;
+    }
+
 }
 
 .page-body {
     background-color: $color-white;
     margin: 2rem auto 1rem auto;
     width: 90%;
-    padding: 15px;
+    padding: 1rem;
     max-width: 640px;
 }
 
@@ -81,8 +86,9 @@
     color: $color-gray;
     background-color: #F8F8F8;
 
+    font-size: 0.8rem;
+
     .page-footer-content {
-        letter-spacing: 1px;
         text-transform: uppercase;
     }
 }

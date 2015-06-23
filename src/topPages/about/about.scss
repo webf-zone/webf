@@ -1,19 +1,8 @@
 ﻿@import "../../scss/_variables.scss";
 
-.page-body {
-    max-width: none;
-}
-
 .about-panel {
-    letter-spacing: 1px;
-    word-spacing: 5px;
-
-    p {
-        font-size: 1.125rem;
-    }
 
     .about-panel-content {
-        font-size: 1.125rem;
         columns: 2 320px;
         column-gap: 4rem;
         column-rule: 1px solid $color-concrete;
@@ -23,9 +12,6 @@
 
 
 .core-contributor-panel {
-
-    letter-spacing: 1px;
-    word-spacing: 5px;
 
     .core-contributor {
         float: left;
