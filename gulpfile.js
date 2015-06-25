@@ -295,6 +295,11 @@ gulp.task("watcher", function (done) {
     }
 });
 
+gulp.task("release-copy", function () {
+    return gulp.src(["CNAME", "LICENSE"])
+        .pipe(gulp.dest(paths.dest));
+});
+
 gulp.task("common", ["copy", "svg-sprite", "html", "sass", "js", "jsbundle", "resource"]);
 
 gulp.task("dev", ["common", "watcher"], function (done) {
@@ -302,7 +307,7 @@ gulp.task("dev", ["common", "watcher"], function (done) {
     done();
 });
 
-gulp.task("release", ["common"], function (done) {
+gulp.task("release", ["release-copy", "common"], function (done) {
     gutil.log(colors.bold.yellow("Product build is ready."));
 });
 

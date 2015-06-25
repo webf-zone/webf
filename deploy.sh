@@ -16,8 +16,8 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     git clone --quiet --branch=$BRANCH https://${GH_TOKEN}@github.com/$TARGET_REPO target_repo_clone > /dev/null
     #go into directory and copy data we're interested in to that directory
     cd target_repo_clone
-    rsync -rv --exclude=.git  ../$DIST_FOLDER/* .
-	#rsync -r --exclude=.git --delete ../$DIST_FOLDER/ ./
+    #rsync -rv --exclude=.git  ../$DIST_FOLDER/* .
+	rsync -rv --exclude=.git --delete ../$DIST_FOLDER/ ./
     #add, commit and push files
     git add --all
     git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
