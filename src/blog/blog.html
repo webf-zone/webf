@@ -4,5 +4,9 @@ template: topPages
 ---
 
 <section class="page-body clearfix">
-
+    <ul>
+        {{#each tags}}
+        <li>{{this.display}}</li>
+        {{/each}}
+    </ul>
 </section>

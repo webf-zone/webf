@@ -7,7 +7,6 @@
     "globals": {
         "process": false,
         "module": false,
-        "path": false,
         "Buffer": false
     }
 }

@@ -15,19 +15,12 @@ var paths;
 var filters;
 var dataStore;
 
+var _isIncluded = {};
+var _tags = {};
+
 function tagPipeline(files) {
 
-    var isIncluded, _tags;
-
-    if (tagPipeline._isIncluded) {
-        isIncluded = tagPipeline._isIncluded;
-        _tags = tagPipeline._tags;
-    } else {
-        isIncluded = tagPipeline._isIncluded = {};
-        _tags = tagPipeline._tags = {};
-    }
-
-    /* Generates tags as well as taxonomy */
+    /* Generates tags & sort them */
     return gulp.src(files, { base: paths.src, cwd: paths.src })
         .pipe(frontMatter({
             property: "frontMatter",
@@ -35,47 +28,42 @@ function tagPipeline(files) {
         }))
         .pipe(through2.obj(function (file, enc, cb) {
 
-            var tags, yamlObj, _isIncluded;
+            var tags, yamlObj, filename, _isFileAlreadyIncluded;
 
+            //filename = file.history[0];
+            filename = file.path;
             yamlObj = file.frontMatter;
 
-            _isIncluded = file.history[0] in isIncluded;
-            isIncluded[file.history[0]] = true;
+            _isFileAlreadyIncluded = filename in _isIncluded;
+            _isIncluded[filename] = true;
 
             // Create tag list
-            if (yamlObj.tags instanceof Array) {
+            if (!!yamlObj.blog && yamlObj.blog.tags instanceof Array) {
 
-                tags = [];
-
-                // Remove duplicates if any & change to lowercase
-                yamlObj.tags.forEach(function (tag) {
-                    tag = tag.toLowerCase();
-
-                    if (tags.indexOf(tag) < 0) {
-                        tags.push(tag);
-                    }
-
-                });
-
-
+                // Remove duplicate tags if any
+                tags = getUniqueList(yamlObj.blog.tags);
 
                 tags.forEach(function (tag) {
 
-                    var tagObj;
+                    var tagObj, tagKey;
 
-                    tag = tag.toLowerCase();
-                    tagObj = _tags[tag];
+                    // Replace white space with dash (hypens)
+                    tagKey = tag.replace(/\s/g, "-");
+                    tagObj = _tags[tagKey];
 
                     if (tagObj) {
                         // It is already included
-                        if (_isIncluded === false) {
+                        if (_isFileAlreadyIncluded === false) {
                             tagObj.count++;
                         }
                     } else {
                         // Straight away include it as it is not included
-                        tagObj = _tags[tag] = {
-                            tag: tag,
-                            count: 1
+                        tagObj = _tags[tagKey] = {
+                            tag: tagKey,
+                            display: tag.replace(/-/g, " "),
+                            count: 1,
+                            list: [],
+                            url: dataStore.config.tags.baseUrl + tagKey
                         };
                         dataStore.tags.push(tagObj);
                     }
@@ -85,15 +73,45 @@ function tagPipeline(files) {
             cb();
         }, function (cb) {
             // Sort tags by count
-
+            sortTagsByOccurenceCount(dataStore.tags);
+            //console.log(_tags);
             //console.log(dataStore.tags);
             cb();
         }));
 }
 
-function escapeRegExp(string) {
-    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+function getUniqueList(list) {
+
+    var uniqueList = [];
+
+    // Remove duplicates if any & change to lowercase
+    list.forEach(function (listItem) {
+        listItem = listItem.toLowerCase();
+
+        if (uniqueList.indexOf(listItem) < 0) {
+            uniqueList.push(listItem);
+        }
+
+    });
+
+    return uniqueList;
 }
+
+function sortTagsByOccurenceCount(tags) {
+
+    // Descending sort
+    tags.sort(function (tagObj1, tagObj2) {
+        if (tagObj1.count < tagObj2.count) {
+            return 1;
+        } else if (tagObj1.count > tagObj2.count) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+
+}
+
 
 gulp.task("tags", ["data-store"], function () {
     return tagPipeline([filters.mdhtml]);

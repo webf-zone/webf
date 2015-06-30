@@ -21,7 +21,7 @@ var config = {
     buildMode: buildMode
 };
 
-// This 'dataStore' is the context for all handlebar template
+// This 'dataStore' is the context for all handlebar templates
 var dataStore = {
     tags: [],
     blogs: []
@@ -62,6 +62,7 @@ var filters = (function () {
         fonts: "**/*.{eot,svg,ttf,woff,woff2}",
         images: "**/*.{png,jpg,jpeg,gif}",
         templates: "**/*.hbs",
+        pagination: "**/*.pagination",
         yaml: "**/*.{yaml,yml}"
     };
 
@@ -70,7 +71,10 @@ var filters = (function () {
 // Clean the dist directory
 del.sync([paths.dest]);
 
-// Gulp task copy
+// Gulp task - blog-collection
+require("./gulp/gulp-blog.js")(paths, filters, config, dataStore);
+
+// Gulp task - copy
 require("./gulp/gulp-copy.js")(paths, filters);
 
 // Gulp task - data-store
@@ -84,6 +88,9 @@ var taskHtml = require("./gulp/gulp-html.js")(paths, filters, config, dataStore)
 
 // Gulp task - js
 var taskJs = require("./gulp/gulp-js.js")(paths, filters, config, dataStore);
+
+// Gulp task - paginate
+var taskJs = require("./gulp/gulp-paginate.js")(paths, filters, config, dataStore);
 
 // Gulp task - sass
 var taskSass = require("./gulp/gulp-sass.js")(paths, filters, config);

@@ -1,3 +1,5 @@
-﻿taxonomies:
+﻿tags:
+    baseUrl: /blog/tags/
+taxonomies:
     - categories
     - articles

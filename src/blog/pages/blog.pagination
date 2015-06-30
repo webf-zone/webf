@@ -1,0 +1,15 @@
+﻿---
+title: Pagination
+template: topPages
+paginator:
+    pageCount: 1
+    listToPaginate: blogs
+    contextName: paginationList
+---
+<ul>
+    {{# each paginationList}}
+    <li>
+        {{this.modified}}
+    </li>
+    {{/each}}
+</ul>

@@ -56,6 +56,10 @@ function renamePipeline() {
         })();
 }
 
+function escapeRegExp(string) {
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+
 var exported = {
     appendSourcemap: appendSourcemap,
     renamePipeline: renamePipeline

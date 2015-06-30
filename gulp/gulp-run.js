@@ -7,7 +7,7 @@ var colors = gutil.colors;
 // Gulp specific modules
 var gulp = require("gulp");
 
-gulp.task("common", ["copy", "svg-sprite", "data-store", "tags", "html", "sass", "js", "jsbundle", "resource"]);
+gulp.task("common", ["copy", "svg-sprite", "data-store", "tags", "blog-collection", "pagination", "html", "sass", "js", "jsbundle", "resource"]);
 
 gulp.task("dev", ["common", "watcher"], function (done) {
     gutil.log(colors.bold.yellow("Watchers Established. You can now start coding."));
