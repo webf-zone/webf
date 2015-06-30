@@ -46,8 +46,9 @@ function htmlPipeline(files) {
         .pipe(markdown())
         .pipe(mdFilter.restore())
         .pipe(through2.obj(function (file, enc, cb) {
-            var yamlObj, templateContent, compiledTemplate, templateOutput;
-            var contentTemplate, content;
+            // Create handlebar context required for template compilation
+            // yamlObj is the extracted yaml frontMatter from each file
+            var yamlObj;
 
             yamlObj = Object.create(dataStore);
 
@@ -55,18 +56,34 @@ function htmlPipeline(files) {
                 yamlObj[key] = file.frontMatter[key];
             });
 
-            // First we compile content of each html/md file as template and execute against frontMatter context
-            contentTemplate = handlebars.compile(file.contents.toString());
-            content = contentTemplate(yamlObj);
+            file.hbsContext = yamlObj;
 
-            templateContent = fs.readFileSync(paths.templates + yamlObj.template + ".hbs").toString();
-            compiledTemplate = handlebars.compile(templateContent);
+            this.push(file);
+            cb();
 
-            yamlObj.contents = content;
+        }))
+        .pipe(through2.obj(function (file, enc, cb) {
+            var template, output, hbsContext;
 
-            templateOutput = compiledTemplate(yamlObj);
+            // Retrive the context for file
+            hbsContext = file.hbsContext;
 
-            file.contents = new Buffer(templateOutput);
+            // First, compile content of each html/md file as template and execute against hbsContext
+            template = handlebars.compile(file.contents.toString());
+            output = template(hbsContext);
+
+            // Set the contents of context to output of first compilation
+            hbsContext.contents = output;
+
+            // Second, compile master template
+            template = fs.readFileSync(paths.templates + hbsContext.template + ".hbs").toString();
+            template = handlebars.compile(template);
+
+            // Now execute master template against second compilation
+            output = template(hbsContext);
+
+            // Set the contents of file to ouput of second compilation
+            file.contents = new Buffer(output);
 
             this.push(file);
             cb();
