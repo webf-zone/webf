@@ -29,7 +29,10 @@ function dataStorePipeline(files) {
 
             dataStore[storeKey] = storeData;
 
-            this.push(file);
+            //this.push(file);
+            cb();
+        }, function (cb) {
+            //console.log(dataStore.config.taxonomies.Regions);
             cb();
         }));
 }

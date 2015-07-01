@@ -88,7 +88,7 @@ function htmlPipeline(files) {
             this.push(file);
             cb();
         }))
-        .pipe(mapUrl())
+        //.pipe(mapUrl())
         .pipe(utils.renamePipeline())
         .pipe(gulp.dest(paths.dest));
 }

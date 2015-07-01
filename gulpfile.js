@@ -62,7 +62,7 @@ var filters = (function () {
         fonts: "**/*.{eot,svg,ttf,woff,woff2}",
         images: "**/*.{png,jpg,jpeg,gif}",
         templates: "**/*.hbs",
-        pagination: "**/*.pagination",
+        pagination: "**/*.collection",
         yaml: "**/*.{yaml,yml}"
     };
 
@@ -90,7 +90,7 @@ var taskHtml = require("./gulp/gulp-html.js")(paths, filters, config, dataStore)
 var taskJs = require("./gulp/gulp-js.js")(paths, filters, config, dataStore);
 
 // Gulp task - paginate
-var taskJs = require("./gulp/gulp-paginate.js")(paths, filters, config, dataStore);
+var taskJs = require("./gulp/gulp-collection.js")(paths, filters, config, dataStore);
 
 // Gulp task - sass
 var taskSass = require("./gulp/gulp-sass.js")(paths, filters, config);

@@ -28,50 +28,67 @@ function blogCollectionPipeline(files) {
             remove: true
         }))
         .pipe(through2.obj(function (file, enc, cb) {
+            // Create blogContext object and url
+            var blogContext;
 
-            var yamlObj, blogObj, filename, index, _isFileAlreadyIncluded;
+            blogContext = file.blogContext = file.frontMatter.blog;
+
+            // Add this page to blog collection only if page belongs to blog category
+            if (!!file.blogContext) {
+
+                blogContext.published = getFormattedDate(blogContext.published);
+                blogContext.modified = getFormattedDate(blogContext.modified);
+
+
+                blogContext.url = "/" + path.relative(process.cwd() + "/" + file.cwd, file.path);
+                blogContext.url = blogContext.url.replace(/\\/g, "/");
+
+                this.push(file);
+            }
+
+            cb();
+
+        }))
+        .pipe(through2.obj(function (file, enc, cb) {
+
+            var blogContext, filename, index, _isFileAlreadyIncluded;
 
             //filename = file.history[0];
             filename = file.path;
-            yamlObj = file.frontMatter;
-            blogObj = yamlObj.blog;
 
-            // Add this page to blog collection only if page belongs to blog category
-            if (blogObj) {
-                _isFileAlreadyIncluded = filename in _blog;
+            blogContext = file.blogContext;
+            _isFileAlreadyIncluded = filename in _blog;
 
-                // TODO - arranging tags for the blog
-                //blogObj.tags
+            // TODO - arranging tags for the blog
 
-                blogObj.url = "/" + path.relative(process.cwd() + "/" + file.cwd, file.path);
-                blogObj.url = blogObj.url.replace(/\\/g, "/");
+            if (_isFileAlreadyIncluded === true) {
 
-                if (_isFileAlreadyIncluded === false) {
-                    dataStore.blogs.push(blogObj);
-                } else {
+                // If file is already included, then just update blog object
+                index = dataStore.blogs.indexOf(_blog[filename]);
 
-                    // If file is already included, then just update blog object
-                    index = dataStore.blogs.indexOf(_blog[filename]);
-
-                    if (index > -1) {
-                        dataStore.blogs.slice(index, 1, blogObj);
-                    }
+                if (index > -1) {
+                    dataStore.blogs.slice(index, 1, blogContext);
                 }
-                _blog[filename] = blogObj;
-
+            } else {
+                dataStore.blogs.push(blogContext);
             }
+
+            _blog[filename] = blogContext;
 
             //this.push(file);
             cb();
         }, function (cb) {
             // Sort blog by last modified date
             sortBlogByLastModifiedDate(dataStore.blogs);
+
+            // TODO - Now add blog against each list
+
             //console.log(dataStore);
             cb();
         }));
 }
 
-gulp.task("blog-collection", ["tags"], function () {
+gulp.task("blogs", ["tags"], function () {
     return blogCollectionPipeline([filters.mdhtml]);
 });
 
@@ -113,6 +130,17 @@ function sortBlogByLastModifiedDate(blogs) {
     });
 }
 
+function getFormattedDate(dateString) {
+    var date = new Date(dateString);
+
+    return date.getYear() + " " + getMonthName(date) + ", " + date.getDay();
+}
+
+function getMonthName(date) {
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    return monthNames[date.getMonth()];
+}
 
 var exported = {
     pipeline: blogCollectionPipeline

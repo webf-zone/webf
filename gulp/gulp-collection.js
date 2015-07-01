@@ -19,7 +19,7 @@ var frontMatter = require("gulp-front-matter");
 
 // Common utilities
 var utils = require("./gulp-utils.js");
-
+var collectionUtils = require("./gulp-collection-utils.js");
 
 // Local data pased from master gulpfile.js
 var config;
@@ -37,32 +37,79 @@ function paginationPipeline(files) {
             remove: true
         }))
         .pipe(through2.obj(function (file, enc, cb) {
-            var yamlObj, paginator;
+            // This part of pipeline generates Context and collection required data
 
-            // This part of pipeline generates Context and pagination required data
+            var context, collection;
 
-            yamlObj = Object.create(dataStore);
+            context = Object.create(dataStore);
 
             Object.keys(file.frontMatter).forEach(function (key) {
-                yamlObj[key] = file.frontMatter[key];
+                context[key] = file.frontMatter[key];
             });
+            delete file.frontMatter;
 
-            paginator = file.frontMatter.paginator;
+            file.collectionContext = context;
+            this.push(file);
 
-            if (paginator) {
-
-                paginator.totalCount = dataStore[paginator.listToPaginate].length;
-                paginator.pagesCount = Math.ceil(paginator.totalCount / paginator.pageCount);
-
-                paginator.context = yamlObj;
-
-                file.paginator = paginator;
-
-                this.push(file);
-            }
             cb();
         }))
         .pipe(through2.obj(function (file, enc, cb) {
+            // This part of pipeline executes collectionCallback specified and gets pages to generate
+
+            var context, collection, collecationCallback, pages;
+            var collectionCallback;
+
+            context = file.collectionContext;
+            collection = context.collection;
+
+            collectionCallback = collectionUtils[collection.generator];
+
+            pages = collectionCallback(context, dataStore, file);
+
+            file.pages = pages;
+            this.push(file);
+
+            cb();
+        }))
+        .pipe(through2.obj(function (file, enc, cb) {
+            // This part of pipeline takes pages objects and generates actual files out of those.
+
+            var pages, pipeline;
+
+            pipeline = this;
+            pages = file.pages;
+
+            pages.forEach(function (page, index) {
+
+                var template, output, context;
+                var base, newFile;
+
+                context = page.context;
+
+                template = handlebars.compile(page.contents ? page.contents : file.contents.toString());
+                output = template(context);
+                context.contents = output;
+
+                template = fs.readFileSync(paths.templates + (page.template ? page.template : context.template) + ".hbs").toString();
+                template = handlebars.compile(template);
+
+                output = template(context);
+
+                base = path.join(file.path, '..');
+
+                newFile = new File({
+                    base: file.base,
+                    path: path.join(base, "/" + (index + 1) + "/index.html"),
+                    contents: new Buffer(output)
+                });
+
+                pipeline.push(newFile);
+
+            });
+
+            cb();
+        }))
+        /*.pipe(through2.obj(function (file, enc, cb) {
             // This part of the pipeline generates actual HTML files
 
             var paginator, context, currentPage;
@@ -99,11 +146,11 @@ function paginationPipeline(files) {
 
             cb();
 
-        }))
+        }))*/
         .pipe(gulp.dest(paths.dest));
 }
 
-gulp.task("pagination", ["tags", "blog-collection"], function () {
+gulp.task("collections", ["tags", "blogs"], function () {
     return paginationPipeline(filters.pagination);
 });
 

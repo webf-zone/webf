@@ -1,13 +1,12 @@
 ﻿---
 title: Pagination
 template: topPages
-paginator:
-    pageCount: 1
-    listToPaginate: blogs
-    contextName: paginationList
+collection:
+    pageSize: 1
+    generator: generateBlogCollection
 ---
 <ul>
-    {{# each paginationList}}
+    {{# each blogList}}
     <li>
         {{this.modified}}
     </li>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns">
+
+<head prefix="og: http://ogp.me/ns">
+    <meta charset="utf-8">
+
+    <!-- If you delete this meta tag World War Z will become a reality -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--IE Compatibility-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    {{#each social.twitter}}
+    <meta name="twitter:{{@key}}" content="{{this}}">
+    {{/each}}
+
+    {{#each social.og}}
+    <meta property="og:{{@key}}" content="{{this}}" />
+    {{/each}}
+
+    <title>{{title}}</title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,100,100italic,900italic' rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" type="text/css" href="/scss/main.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/topPages.css" />
+
+    <!-- Custom CSS files on page -->
+    {{#if scss}}
+    {{#each scss}}
+    <link rel="stylesheet" type="text/css" href="{{this}}.css" />
+    {{else}}
+    <link rel="stylesheet" type="text/css" href="{{scss}}.css" />
+    {{/each}}
+    {{/if}}
+
+</head>
+
+<body>
+
+    {{> indexHeader}}
+    <section class="page-body clearfix">
+        <h2>{{title}}</h2>
+        <p>Published on: <time>{{blog.published}}</time> Last modified: <time>{{blog.modified}}</time></p>
+        {{{ contents }}}
+    </section>
+    {{> indexFooter}}
+
+    <script type="text/javascript" src="/js/bundle.js"></script>
+
+    {{#if js}}
+    {{#each js}}
+    <script type="text/javascript" src="{{this}}"></script>
+    {{else}}
+    <script type="text/javascript" src="{{js}}"></script>
+    {{/each}}
+    {{/if}}
+
+
+</body>
+
+</html>

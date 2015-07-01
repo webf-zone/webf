@@ -1,12 +1,18 @@
 ﻿---
 title: WebF
 template: topPages
+scss: blog
 ---
 
-<section class="page-body clearfix">
-    <ul>
-        {{#each tags}}
-        <li>{{this.display}}</li>
-        {{/each}}
-    </ul>
+<section class="page-body blog-panel clearfix">
+    <h2>Recent Articles</h2>
+    <p>We are making very good progress on this... Please allow us some more time.</p>
+    <div class="right-side-panel">
+        <div class="tag-heading text-bold">TAGS</div>
+        <ul class="tag-list" role="navigation" title="Link List">
+            {{#each tags}}
+            <li class="tag-list-item" role="menuitem"><a href="#">{{this.display}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
 </section>
