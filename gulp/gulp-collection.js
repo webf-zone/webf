@@ -150,7 +150,7 @@ function paginationPipeline(files) {
         .pipe(gulp.dest(paths.dest));
 }
 
-gulp.task("collections", ["tags", "blogs"], function () {
+gulp.task("collections", ["html"], function () {
     return paginationPipeline(filters.pagination);
 });
 

@@ -4,6 +4,7 @@ template: blogPages
 blog:
     published: "2015-06-28"
     modified: "2015-06-30"
+    author: harshal
     tags:
         - HTML
         - Fundamentals

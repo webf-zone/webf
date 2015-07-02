@@ -6,7 +6,7 @@ collection:
     generator: generateBlogCollection
 ---
 <ul>
-    {{# each blogList}}
+    {{#each blogList}}
     <li>
         {{this.modified}}
     </li>

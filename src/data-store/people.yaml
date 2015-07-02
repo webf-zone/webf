@@ -1,0 +1,13 @@
+﻿harshal:
+    name: Harshal Patil
+    img: /img/people/harshal.jpg
+    short-bio: Front-end consultant
+    links:
+        -   url: https://twitter.com/mistyHarsh
+            display: "@mistyharsh"
+        -   url: http://www.slideshare.net/HarshalPatil4
+            display: "Presentation"
+kumar:
+    name: Kumar Bhot
+    img: /img/people/kumarbhot.jpg
+    short-bio: Front-end architect with Globant

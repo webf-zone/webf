@@ -10,11 +10,29 @@ var paths;
 var filters;
 
 function registerHandlebarPartials() {
-    handlebars.registerPartial('indexHeader', fs.readFileSync(paths.partials + "indexHeader.hbs").toString());
-    handlebars.registerPartial('indexFooter', fs.readFileSync(paths.partials + "indexFooter.hbs").toString());
+    handlebars.registerPartial("indexHeader", fs.readFileSync(paths.partials + "indexHeader.hbs").toString());
+    handlebars.registerPartial("indexFooter", fs.readFileSync(paths.partials + "indexFooter.hbs").toString());
 }
 
 function registerHandlebarHelpers() {
+    handlebars.registerHelper("partialEach", function (context, options) {
+
+        var ret, length, fromIndex, howMany;
+
+        ret = "";
+
+        fromIndex = options.hash.from;
+        howMany = options.hash.howMany;
+        length = fromIndex + howMany;
+
+        length = Math.min(context.length, length);
+
+        for (var i = fromIndex; i < length; i++) {
+            ret = ret + options.fn(context[i]);
+        }
+
+        return ret;
+    });
 }
 
 var exported = {

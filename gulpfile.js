@@ -71,9 +71,6 @@ var filters = (function () {
 // Clean the dist directory
 del.sync([paths.dest]);
 
-// Gulp task - blog-collection
-require("./gulp/gulp-blog.js")(paths, filters, config, dataStore);
-
 // Gulp task - copy
 require("./gulp/gulp-copy.js")(paths, filters);
 
@@ -97,9 +94,6 @@ var taskSass = require("./gulp/gulp-sass.js")(paths, filters, config);
 
 // Gulp task - svg-sprite
 var taskSvg = require("./gulp/gulp-svg.js")(paths, filters, config, dataStore);
-
-// Gulp task - tags
-var taskTag = require("./gulp/gulp-tags.js")(paths, filters, config, dataStore);
 
 // Shared utilities
 var utils = require("./gulp/gulp-utils.js")
