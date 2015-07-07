@@ -6,14 +6,16 @@ scss: blog
 
 <section class="page-body blog-panel clearfix">
     <h2>A blog that tries to be timeless...</h2>
-    <div>
+
+    <ul class="blog-list">
         {{#partialEach blogs from="0" howMany="5"}}
-        <div>
+        <li class="blog-list-item">
             <h3><a href="{{this.url}}">{{this.title}}</a></h3>
-            <p>By {{this.author.name}}. Last modified on <time>{{this.modified}}</time></p>
-        </div>
+            <div class="blog-list-item-meta">By {{this.author.name}}. Last modified on <time>{{this.modified}}</time></div>
+        </li>
         {{/partialEach}}
-    </div>
+    </ul>
+
     <p style="margin-top: 90px"><strong>Note: We are making very good progress on this... Please allow us some more time.</strong></p>
     <div class="right-side-panel">
         <div class="tag-heading text-bold">TAGS</div>
