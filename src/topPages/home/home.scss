@@ -79,6 +79,13 @@
             box-shadow: 0 0 $vertical-line-width + px $color-pelorous;
         }
 
+        .core-item {
+          background-image: url(/img/icons/ng.png);
+          background-size: 64px 64px;
+          background-position: top right;
+          background-repeat: no-repeat;
+        }
+
         .timetable-item {
             padding-bottom: $vertical-line-padding + px;
             padding-left: $vertical-line-padding * 2.2 + px;
