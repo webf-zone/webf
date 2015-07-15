@@ -6,8 +6,120 @@
         -   url: https://twitter.com/mistyHarsh
             display: "@mistyharsh"
         -   url: http://www.slideshare.net/HarshalPatil4
-            display: "Presentation"
+            display: Presentations
+
 kumar:
     name: Kumar Bhot
     img: /img/people/kumarbhot.jpg
     short-bio: Front-end architect with Globant
+    links:
+        -   url: https://twitter.com/usablebytes
+            display: "@UsableBytes"
+        -   url: https://www.linkedin.com/in/kumarbhot
+            display: LinkedIn
+        -   url: https://www.kumarbhot.com
+            display: Kumar's Blog
+
+debjit:
+    name: Debjit Biswas
+    img: /img/people/debjit.jpg
+    short-bio: Principal UI Engineer at PubMatic
+    links:
+        -   url: https://twitter.com/debjitbis08
+            display: "@debjitbis08"
+        -   url: http://debjitbiswas.com
+            display: Debjit's blog
+
+deepak:
+    name:
+    img: /img/people/deepak.jpg
+    short-bio: Associate Architect at Globant
+    links:
+        -   url: https://twitter.com/deepakpatil84
+            display: "@deepakpatil84"
+        -   url: http://in.linkedin.com/in/deepakpatil84/
+            display: LinkedIn
+imran:
+    name: Imran Shaikh
+    img: /img/people/Imran.jpg
+    short-bio: Sr. Advisory Engineer at Pitney Bowes
+    links:
+        -   url: https://www.linkedin.com/in/shaikhimran786
+            display: "LinkedIn"
+        -   url: https://shaikhimran.wordpress.com/
+            display: Imran's Website
+
+niloy:
+    name: Niloy Mondal
+    img: /img/people/niloy.jpg
+    short-bio: UI Engineer at CarIQ
+    links:
+        -   url: http://niloy.github.io/
+            display: Niloy's Website
+        -   url: https://github.com/niloy/blog/issues/
+            display: Niloy's Blog
+
+piyush:
+    name: Piyush Goyal
+    img: /img/people/piyush.jpg
+    short-bio: Sr. Member of Technical Staff at ScaleArc
+    links:
+        -   url: https://twitter.com/piyush_goyal85
+            display: "@piyush_goyal85"
+        -   url: https://in.linkedin.com/pub/piyush-goyal/12/706/472
+            display: LinkedIn
+
+ronak:
+    name: Ronak Sawhney
+    img: /img/people/ronak.jpg
+    short-bio: Senior UI Engineer at Globant
+    links:
+        -   url: https://twitter.com/ronaksawhney
+            display: "@ronaksawhney"
+        -   url: https://in.linkedin.com/pub/ronak-sawhney/11/a16/173
+            display: LinkedIn
+
+sachin:
+    name: Sachin Patil
+    img: /img/people/sachin.jpg
+    short-bio: UI Architect at EMC<sup>2</sup>
+    links:
+        -   url: https://in.linkedin.com/pub/sachin-patil/27/194/108
+            display: LinkedIn
+
+sandeep:
+    name: Sandeep Chaudhary
+    img: /img/people/sandeep.jpg
+    short-bio: Web Developer at LinkedIn
+    links:
+        -   url: https://www.linkedin.com/in/sandeepchaudhary91
+            display: LinkedIn
+        -   url: http://sandeepchaudhary.com/
+            display: Sandeep's Website
+saurabh:
+    name: Saurabh Maind
+    img: /img/people/saurabh.jpg
+    short-bio: UI Engineer at PubMatic
+    links:
+        -   url: https://in.linkedin.com/pub/saurabh-maind/a/362/695
+            display: LinkedIn
+
+shreyas:
+    name: Shreyas Ubale
+    img: /img/people/shreyas.jpg
+    short-bio: Front-end Engineer at InMobi
+
+snehal:
+    name: Snehal Mhaske
+    img: /img/people/snehal.jpg
+    short-bio: UI Engineer at FlipKart
+    links:
+        -   url: https://in.linkedin.com/pub/snehal-mhaske/16/8a/455
+            display: LinkedIn
+
+aditya:
+    name: Aditya Kumar
+    img: /img/people/.jpg
+    short-bio: UI Engineer at FlipKart
+
+eventPeople: [debjit, deepak, harshal, imran, kumar, niloy, piyush, ronak, sachin, sandeep, saurabh, snehal]
