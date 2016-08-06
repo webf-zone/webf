@@ -1,7 +1,7 @@
 {
     "name": "webf-zone",
     "version": "1.0.0",
-    "description": "Public website of Shellino Vacations",
+    "description": "Source code for webf.zone",
     "main": "index.js",
     "author": "Harshal Patil",
     "license": "MIT",
