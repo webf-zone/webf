@@ -1,0 +1,26 @@
+# Use standard stylelint recommendation
+extends: 'stylelint-config-standard'
+
+plugins:
+    - 'stylelint-scss'
+
+rules:
+
+    # Color related standards
+    color-hex-case: upper
+    color-hex-length: long
+
+    indentation: 4
+
+    at-rule-no-unknown:
+        - true
+        -   ignoreAtRules:
+                # Mixins coming from SCSS
+                - 'include'
+                - 'mixin'
+                - 'if'
+                - 'else'
+                - 'content'
+                - 'warn'
+
+    string-quotes: single

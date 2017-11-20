@@ -1,0 +1,77 @@
+@import '../../assets/css/main.scss';
+
+@mixin website-outline {
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 90%;
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.page-header {
+    @include website-outline;
+
+    padding-top: 2rem;
+}
+
+.logo-container {
+    font-size: 1.125rem;
+    margin: 0;
+    text-align: center;
+}
+
+.logo-container {
+    font-size: 1.125rem;
+}
+
+.logo-link {
+    display: block;
+}
+
+.page-master-menu {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+
+.page-master-menu-item {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+}
+
+.page-master-menu-link {
+    font-size: 1.125rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@include respond-to('medium-range') {
+    .page-header {
+        font-size: 0;
+        letter-spacing: 0;
+        word-spacing: 0;
+    }
+
+    .logo-container {
+        display: inline-block;
+        text-align: left;
+        width: 48%;
+    }
+
+    .page-master-menu {
+        display: inline-block;
+        text-align: right;
+        width: 46%;
+    }
+
+    .page-master-menu-item {
+        display: inline-block;
+        margin: 0 2rem 0 0;
+    }
+}

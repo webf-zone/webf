@@ -1,0 +1,20 @@
+$breakpoints: (
+    'small-range': (min-width: 30em),
+    'medium-range': (min-width:40.063em),
+    'large-range': (min-width: 64.063em),
+    'xlarge-range': (min-width: 90.063em),
+    'xxlarge-range': (min-width: 120.063em)
+) !default;
+
+@mixin respond-to($breakpoint) {
+    @if map-has-key($map: $breakpoints,$key:$breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+
+    @else {
+        @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+            + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+    }
+}

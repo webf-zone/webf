@@ -1,0 +1,22 @@
+@import '../../assets/css/main.scss';
+
+@mixin website-outline {
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 90%;
+}
+
+@include respond-to('large-range') {
+    .page-footer {
+        @include website-outline;
+
+        padding: 1rem;
+        color: $color-gray;
+        background-color: $color-alabaster;
+        font-size: 0.8rem;
+
+        .page-footer-content {
+            text-transform: uppercase;
+        }
+    }
+}

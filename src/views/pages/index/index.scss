@@ -1,0 +1,21 @@
+@import '../../../assets/css/main.scss';
+
+.homepage-content {
+    margin: 0 3%;
+}
+
+@include respond-to ('medium-range') {
+    .page-body {
+        background-color: $color-white;
+        margin: 2rem auto 1rem;
+        width: 90%;
+        padding: 1rem;
+        max-width: 640px;
+    }
+}
+
+@include respond-to('large-range') {
+    .page-body {
+        max-width: 1600px;
+    }
+}
