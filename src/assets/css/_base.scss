@@ -1,8 +1,10 @@
+@import './_breakpoints.scss';
 @import './_variables.scss';
 
 html {
     height: 100%;
     font-size: 18px;
+    box-sizing: border-box;
 }
 
 body {
@@ -21,6 +23,90 @@ a {
     text-decoration: none;
 }
 
-* {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-light {
+    font-weight: 300;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-no-break {
+    white-space: nowrap;
+}
+
+.text-webf {
+    color: $color-niagara;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 400;
+    margin: 0.2rem 0 0.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+@include respond-to ('extra-small-range') {
+    .page-body {
+        background-color: $color-white;
+        margin: 2rem auto 1rem;
+        width: 90%;
+        padding: 1rem;
+        max-width: 640px;
+    }
+}
+
+@include respond-to('medium-range') {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@include respond-to('large-range') {
+    .page-body {
+        max-width: 1600px;
+    }
 }

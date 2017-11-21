@@ -1,0 +1,9 @@
+@import '../../../assets/css/_variables.scss';
+
+.terms-conditions-panel {
+    .terms-conditions-content {
+        columns: 2 320px;
+        column-gap: 4rem;
+        column-rule: 1px solid $color-concrete;
+    }
+}

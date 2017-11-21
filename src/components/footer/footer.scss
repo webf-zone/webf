@@ -6,17 +6,15 @@
     width: 90%;
 }
 
-@include respond-to('large-range') {
-    .page-footer {
-        @include website-outline;
+.page-footer {
+    @include website-outline;
 
-        padding: 1rem;
-        color: $color-gray;
-        background-color: $color-alabaster;
-        font-size: 0.8rem;
+    padding: 1rem;
+    color: $color-gray;
+    background-color: $color-alabaster;
+    font-size: 0.8rem;
 
-        .page-footer-content {
-            text-transform: uppercase;
-        }
+    .page-footer-content {
+        text-transform: uppercase;
     }
 }
