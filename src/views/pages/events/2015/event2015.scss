@@ -9,8 +9,24 @@
         max-width: 1600px;
     }
 
-    .two-column-grid {
+    .event-intro,
+    .wall-container,
+    .event-people,
+    .contact-us-panel {
         float: left;
+        width: 44%;
+        margin: 0 3%;
+        text-align: left;
+    }
+
+    .event-people {
+        ul {
+            padding: 0;
+        }
+    }
+
+    .event-calendar {
+        float: right;
         width: 44%;
         margin: 0 3%;
     }
@@ -24,6 +40,7 @@
     .inline-block {
         .event-header-text {
             display: inline-block;
+            vertical-align: top;
         }
     }
 
@@ -61,6 +78,15 @@
         font-size: 1.5rem;
         letter-spacing: 1px;
         text-decoration: underline;
+        color: $color-white;
+    }
+
+    .button {
+        border-radius: 0;
+        border-style: solid;
+        text-align: center;
+        background-color: $color-niagara;
+        border-color: $color-niagara;
     }
 
     .event-timetable {
@@ -170,6 +196,12 @@
         font-size: 1.125rem;
     }
 
+    .button {
+        border-radius: 0;
+        text-align: center;
+        background-color: $color-niagara;
+    }
+
     .button.register-now {
         font-size: 1rem;
         letter-spacing: 1px;
@@ -179,6 +211,7 @@
         left: 0;
         top: 0;
         text-decoration: underline;
+        color: white;
     }
 
     @include respond-to ('small-range') {
@@ -216,6 +249,14 @@
             width: 30%;
             margin-right: 5%;
         }
+    }
+}
+
+@include respond-to ('large-range') {
+    .ideal-candidate-panel {
+        float: left;
+        width: 44%;
+        margin: 1rem 3%;
     }
 }
 

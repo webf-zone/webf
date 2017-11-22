@@ -1,16 +1,16 @@
 module.exports = {
-    build: {
-        extend(config, ctx) {
-            if (ctx.dev && ctx.isClient) {
-                config.module.rules.push({
-                    enforce: 'pre',
-                    test: /\.(js)$/,
-                    loader: 'eslint-loader',
-                    exclude: /(node_modules)/
-                });
-            }
-        }
-    },
+    // build: {
+    //     extend(config, ctx) {
+    //         if (ctx.dev && ctx.isClient) {
+    //             config.module.rules.push({
+    //                 enforce: 'pre',
+    //                 test: /\.(js)$/,
+    //                 loader: 'eslint-loader',
+    //                 exclude: /(node_modules)/
+    //             });
+    //         }
+    //     }
+    // },
     srcDir: 'src/views',
     head: {
         titleTemplate: 'WebF %s',
