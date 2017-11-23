@@ -1,4 +1,4 @@
-@import '../../assets/css/main.scss';
+@import '../../assets/css/_breakpoints.scss';
 
 @mixin website-outline {
     margin: 0 auto;
@@ -20,10 +20,6 @@ img {
     font-size: 1.125rem;
     margin: 0;
     text-align: center;
-}
-
-.logo-container {
-    font-size: 1.125rem;
 }
 
 .logo-link {

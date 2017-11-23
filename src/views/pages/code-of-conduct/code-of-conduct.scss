@@ -1,4 +1,4 @@
-@import '../../../assets/css/main.scss';
+@import '../../../assets/css/_breakpoints.scss';
 
 .code-conduct-panel {
     h4 {
@@ -16,13 +16,5 @@
         width: 48%;
         display: inline-block;
         vertical-align: top;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    .medium-6 {
-        text-align: left;
     }
 }

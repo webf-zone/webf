@@ -1,5 +1,4 @@
 @import '../../../../assets/css/_breakpoints.scss';
-@import '../../../../assets/css/_variables.scss';
 
 small {
     color: #919173;
@@ -19,7 +18,7 @@ img {
 }
 
 @include respond-to ('extra-small-range') {
-    .block-grid-1 {
+    .block-grid {
         li {
             list-style: none;
             padding: 0 0.625rem 1.25rem;
@@ -28,7 +27,7 @@ img {
 }
 
 @include respond-to ('medium-range') {
-    .block-grid-1 {
+    .block-grid {
         li {
             width: 50%;
             display: inline-block;
@@ -37,7 +36,7 @@ img {
 }
 
 @include respond-to ('large-range') {
-    .block-grid-1 {
+    .block-grid {
         li {
             width: 33.33%;
             display: inline-block;
@@ -46,7 +45,7 @@ img {
 }
 
 @include respond-to ('xlarge-range') {
-    .block-grid-1 {
+    .block-grid {
         li {
             width: 20%;
             display: inline-block;
