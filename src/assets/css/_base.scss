@@ -1,5 +1,6 @@
 @import './_breakpoints.scss';
 @import './_variables.scss';
+@import './_setting.scss';
 
 html {
     height: 100%;
@@ -16,17 +17,31 @@ body {
     background-color: $color-concrete;
     letter-spacing: 1px;
     word-spacing: 4px;
+    margin: 0;
 }
 
 a {
     color: $color-niagara;
     text-decoration: none;
+    line-height: 1.5px;
+}
+
+a:hover {
+    color: scale-color($color-niagara, $lightness: -20%);
 }
 
 *,
 *::before,
 *::after {
     box-sizing: inherit;
+}
+
+.clearfix::before {
+    content: '';
+    clear: both;
+    display: table;
+    height: 0;
+    visibility: hidden;
 }
 
 .clearfix::after {
@@ -86,15 +101,20 @@ h4 {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: $h1-font-size;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: $h2-font-size;
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: $h3-font-size;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
 }
 
 @include respond-to ('extra-small-range') {
@@ -118,6 +138,17 @@ h3 {
 
     h3 {
         font-size: 1.5rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h6 {
+        line-height: 1.4;
+    }
+
+    p {
+        line-height: 1.6;
     }
 }
 

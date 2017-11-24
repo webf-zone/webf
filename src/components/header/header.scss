@@ -14,6 +14,11 @@ img {
     @include website-outline;
 
     padding-top: 2rem;
+
+    ul {
+        padding: 0;
+        line-height: 1.6;
+    }
 }
 
 .logo-container {
@@ -53,13 +58,13 @@ img {
     .logo-container {
         display: inline-block;
         text-align: left;
-        width: 48%;
+        width: 50%;
     }
 
     .page-master-menu {
         display: inline-block;
         text-align: right;
-        width: 46%;
+        width: 50%;
     }
 
     .page-master-menu-item {

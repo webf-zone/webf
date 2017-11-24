@@ -1,6 +1,9 @@
 @import '../../../assets/css/_breakpoints.scss';
 
 .code-conduct-panel {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
     h4 {
         text-transform: uppercase;
         font-size: 1.32rem;
@@ -13,8 +16,10 @@
 
 @include respond-to('medium-range') {
     .columns {
-        width: 48%;
+        width: 50%;
         display: inline-block;
         vertical-align: top;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }

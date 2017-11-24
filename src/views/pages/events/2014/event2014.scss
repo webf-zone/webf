@@ -7,18 +7,26 @@ small {
 
 ul {
     padding: 0;
-    margin: 0 0.625rem;
     list-style-position: inside;
 }
 
+.block-container {
+    ul {
+        margin: 0 0.625rem 1.25rem;
+        padding: 0;
+        font-size: 0;
+    }
+
+    // display: table;
+    // overflow: hidden;
+}
+
 img {
-    display: inline-block;
-    vertical-align: middle;
     max-width: 100%;
 }
 
 @include respond-to ('extra-small-range') {
-    .block-grid {
+    .block-container {
         li {
             list-style: none;
             padding: 0 0.625rem 1.25rem;
@@ -27,28 +35,37 @@ img {
 }
 
 @include respond-to ('medium-range') {
-    .block-grid {
+    .block-container {
+        ul {
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+        }
+
         li {
             width: 50%;
             display: inline-block;
+            // float: left;
         }
     }
 }
 
 @include respond-to ('large-range') {
-    .block-grid {
+    .block-container {
         li {
             width: 33.33%;
             display: inline-block;
+            // float: left;
         }
     }
 }
 
 @include respond-to ('xlarge-range') {
-    .block-grid {
+    .block-container {
         li {
             width: 20%;
             display: inline-block;
+            // float: left;
         }
     }
 }
