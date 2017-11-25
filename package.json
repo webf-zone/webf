@@ -4,6 +4,7 @@
     "description": "Web-F",
     "author": "sagar735 <sagarmahajan735@gmail.com>",
     "private": true,
+    
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "nuxt",
@@ -14,9 +15,11 @@
         "precommit": "npm run lint",
         "stylelint": "stylelint \"src/**/*.scss\" || true"
     },
+    
     "dependencies": {
         "nuxt": "^1.0.0-rc11"
     },
+
     "devDependencies": {
         "babel-eslint": "^8.0.2",
         "eslint": "^4.11.0",
