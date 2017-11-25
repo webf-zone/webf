@@ -1,6 +1,7 @@
 @import './_breakpoints.scss';
 @import './_variables.scss';
-@import './_setting.scss';
+@import './_settings.scss';
+@import './_foundations.scss';
 
 html {
     height: 100%;
@@ -20,14 +21,15 @@ body {
     margin: 0;
 }
 
+a:hover {
+    color: scale-color($color-niagara, $lightness: -20%);
+    cursor: pointer;
+}
+
 a {
     color: $color-niagara;
     text-decoration: none;
-    line-height: 1.5px;
-}
-
-a:hover {
-    color: scale-color($color-niagara, $lightness: -20%);
+    line-height: normal;
 }
 
 *,
@@ -50,6 +52,13 @@ a:hover {
     display: block;
     height: 0;
     visibility: hidden;
+}
+
+.row.full-width {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
 }
 
 .text-italic {
@@ -100,17 +109,17 @@ h4 {
     margin: 0.2rem 0 0.5rem;
 }
 
-h1 {
-    font-size: $h1-font-size;
-}
+// h1 {
+//     font-size: $h1-font-size;
+// }
 
-h2 {
-    font-size: $h2-font-size;
-}
+// h2 {
+//     font-size: $h2-font-size;
+// }
 
-h3 {
-    font-size: $h3-font-size;
-}
+// h3 {
+//     font-size: $h3-font-size;
+// }
 
 p {
     margin-top: 0;

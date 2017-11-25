@@ -1,25 +1,13 @@
-@import '../../../assets/css/_breakpoints.scss';
+@import '../../../assets/css/_variables.scss';
+@import '../../../assets/css/_foundations.scss';
+@import '../../../assets/css/_base.scss';
 
 .code-conduct-panel {
-    padding-left: 1rem;
-    padding-right: 1rem;
-
     h4 {
         text-transform: uppercase;
-        font-size: 1.32rem;
     }
 
     .simple-person-image {
         max-width: 200px;
-    }
-}
-
-@include respond-to('medium-range') {
-    .columns {
-        width: 50%;
-        display: inline-block;
-        vertical-align: top;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 }

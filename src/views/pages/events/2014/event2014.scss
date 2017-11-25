@@ -1,72 +1,19 @@
+@import '../../../../assets/css/_foundations.scss';
+@import '../../../../assets/css/_base.scss';
 @import '../../../../assets/css/_breakpoints.scss';
-
-small {
-    color: #919173;
-    font-size: 60%;
-}
-
-ul {
-    padding: 0;
-    list-style-position: inside;
-}
-
-.block-container {
-    ul {
-        margin: 0 0.625rem 1.25rem;
-        padding: 0;
-        font-size: 0;
-    }
-
-    // display: table;
-    // overflow: hidden;
-}
-
-img {
-    max-width: 100%;
-}
-
-@include respond-to ('extra-small-range') {
-    .block-container {
-        li {
-            list-style: none;
-            padding: 0 0.625rem 1.25rem;
-        }
-    }
-}
-
-@include respond-to ('medium-range') {
-    .block-container {
-        ul {
-            padding: 0;
-            margin: 0;
-            font-size: 0;
-        }
-
-        li {
-            width: 50%;
-            display: inline-block;
-            // float: left;
-        }
-    }
-}
-
-@include respond-to ('large-range') {
-    .block-container {
-        li {
-            width: 33.33%;
-            display: inline-block;
-            // float: left;
-        }
-    }
-}
+@import '../../../../assets/css/_settings.scss';
 
 @include respond-to ('xlarge-range') {
-    .block-container {
-        li {
-            width: 20%;
-            display: inline-block;
-            // float: left;
-        }
+    .xlarge-block-grid-5 > li {
+        width: 20%;
+        list-style: none;
+    }
+
+    .xlarge-block-grid-5 > li:nth-of-type(n) {
+        clear: none;
+    }
+
+    .xlarge-block-grid-5 > li:nth-of-type(5n+1) {
+        clear: both;
     }
 }
-

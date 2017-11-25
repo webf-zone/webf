@@ -12,7 +12,7 @@ module.exports = {
     //     }
     // },
     srcDir: 'src/views',
-    head: {
+    head: { 
         titleTemplate: 'WebF %s',
         meta: [{
             charset: 'utf-8'

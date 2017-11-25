@@ -81,14 +81,6 @@
         color: $color-white;
     }
 
-    .button {
-        border-radius: 0;
-        border-style: solid;
-        text-align: center;
-        background-color: $color-niagara;
-        border-color: $color-niagara;
-    }
-
     .event-timetable {
 
         $vertical-line-padding: 30;
@@ -194,12 +186,6 @@
         color: $color-concrete;
         padding: 1rem;
         font-size: 1.125rem;
-    }
-
-    .button {
-        border-radius: 0;
-        text-align: center;
-        background-color: $color-niagara;
     }
 
     .button.register-now {
