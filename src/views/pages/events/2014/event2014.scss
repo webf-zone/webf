@@ -1,7 +1,4 @@
-@import '../../../../assets/css/_foundations.scss';
-@import '../../../../assets/css/_base.scss';
 @import '../../../../assets/css/_breakpoints.scss';
-@import '../../../../assets/css/_settings.scss';
 
 @include respond-to ('xlarge-range') {
     .xlarge-block-grid-5 > li {

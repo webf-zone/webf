@@ -1,7 +1,6 @@
 @import './_breakpoints.scss';
 @import './_variables.scss';
 @import './_settings.scss';
-@import './_foundations.scss';
 
 html {
     height: 100%;
@@ -108,18 +107,6 @@ h4 {
     font-weight: 400;
     margin: 0.2rem 0 0.5rem;
 }
-
-// h1 {
-//     font-size: $h1-font-size;
-// }
-
-// h2 {
-//     font-size: $h2-font-size;
-// }
-
-// h3 {
-//     font-size: $h3-font-size;
-// }
 
 p {
     margin-top: 0;

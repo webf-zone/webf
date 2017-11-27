@@ -1,5 +1,4 @@
 @import '../../../assets/css/_breakpoints.scss';
-@import '../../../assets/css/_base.scss';
 
 @include respond-to ('large-range') {
     .two-column-grid {
