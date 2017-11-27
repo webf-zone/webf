@@ -1,0 +1,16 @@
+@import '../../../../assets/css/_breakpoints.scss';
+
+@include respond-to ('xlarge-range') {
+    .xlarge-block-grid-5 > li {
+        width: 20%;
+        list-style: none;
+    }
+
+    .xlarge-block-grid-5 > li:nth-of-type(n) {
+        clear: none;
+    }
+
+    .xlarge-block-grid-5 > li:nth-of-type(5n+1) {
+        clear: both;
+    }
+}

@@ -1,0 +1,9 @@
+@import '../../../assets/css/_breakpoints.scss';
+
+@include respond-to ('large-range') {
+    .two-column-grid {
+        float: left;
+        width: 44%;
+        margin: 0 3%;
+    }
+}

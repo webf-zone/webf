@@ -1,3 +1,0 @@
-{
-	"predef" : ["console", "require", "__dirname"]
-}

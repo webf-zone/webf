@@ -1,0 +1,149 @@
+@import '../../assets/css/_breakpoints.scss';
+@import '../../assets/css/_foundations.scss';
+@import '../../assets/css/_base.scss';
+
+@mixin website-outline {
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 90%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.page-header {
+    @include website-outline;
+
+    padding-top: 2rem;
+
+    ul {
+        padding: 0;
+        line-height: 1.6;
+    }
+}
+
+.logo-container {
+    font-size: 1.125rem;
+    margin: 0;
+    text-align: center;
+}
+
+.logo-link {
+    display: block;
+}
+
+.page-master-menu {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+
+.page-master-menu-item {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+}
+
+.page-master-menu-link {
+    font-size: 1.125rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@include respond-to('medium-range') {
+    .page-header {
+        font-size: 0;
+        letter-spacing: 0;
+        word-spacing: 0;
+    }
+
+    .logo-container {
+        display: inline-block;
+        text-align: left;
+        width: 50%;
+    }
+
+    .page-master-menu {
+        display: inline-block;
+        text-align: right;
+        width: 50%;
+    }
+
+    .page-master-menu-item {
+        display: inline-block;
+        margin: 0 2rem 0 0;
+    }
+}
+// @import '../../assets/css/_variables.scss';
+// @import '../../assets/css/_breakpoints.scss';
+// @import '../../assets/css/_base.scss';
+
+// @mixin website-outline {
+//     margin: 0 auto;
+//     width: 90%;
+//     max-width: 1600px;
+// }
+
+// .page-header {
+//     @include website-outline;
+
+//     padding-top: 2rem;
+// }
+
+// .logo-container {
+//     margin: 0;
+//     text-align: center;
+// }
+
+// h1.logo-container {
+//     font-size: 1.125rem;
+//     margin: 0;
+//     text-align: center;
+// }
+
+// .logo-link {
+//     display: block;
+// }
+
+// .page-master-menu {
+//     list-style: none;
+//     margin: 0;
+//     text-align: center;
+// }
+
+// .page-master-menu-item {
+//     display: inline-block;
+//     margin: 0 1rem 0 0;
+// }
+
+// .page-master-menu-link {
+//     font-size: 1.125rem;
+//     letter-spacing: 2px;
+//     text-transform: uppercase;
+// }
+
+// @include respond-to('medium-range') {
+//     .page-header {
+//         font-size: 0;
+//         letter-spacing: 0;
+//         word-spacing: 0;
+//     }
+
+//     .logo-container {
+//         display: inline-block;
+//         text-align: left;
+//         width: 50%;
+//     }
+
+//     .page-master-menu {
+//         display: inline-block;
+//         text-align: right;
+//         width: 50%;
+//     }
+
+//     .page-master-menu-item {
+//         display: inline-block;
+//         margin: 0 2rem 0 0;
+//     }
+// }
+
